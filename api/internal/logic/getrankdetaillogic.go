@@ -2,7 +2,6 @@ package logic
 
 import (
 	"context"
-	"fmt"
 
 	"api/internal/svc"
 	"api/internal/types"
@@ -25,7 +24,7 @@ func NewGetRankDetailLogic(ctx context.Context, svcCtx *svc.ServiceContext) GetR
 }
 
 func (l *GetRankDetailLogic) GetRankDetail(req types.InfoReq) (*types.InfoRes, error) {
-	res, _ := l.svcCtx.ItemModel.FindOne(req.Id)
-	fmt.Println(res)
-	return &types.InfoRes{Data: res}, nil
+	detail, _ := l.svcCtx.ItemModel.FindOne(req.Id)
+	list, _ := l.svcCtx.ItemDetailModel.GetAll(req.Id)
+	return &types.InfoRes{detail, list}, nil
 }

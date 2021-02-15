@@ -3,7 +3,7 @@ package types
 
 type ListReq struct {
 	Limit int `json:"limit"`
-	Page  int `json:"p"`
+	Page  int `json:"page"`
 }
 
 type InfoReq struct {
@@ -11,13 +11,14 @@ type InfoReq struct {
 }
 
 type InfoRes struct {
-	Data interface{} `json:"data"`
+	Item interface{} `json:"item"`
+	List interface{} `json:"list"`
 }
 
 type ListRes struct {
 	Data      interface{} `json:"data"`
 	Total     int         `json:"total"`
-	Page      int         `json:"p"`
+	Page      int         `json:"page"`
 	TotalPage int         `json:"totalPage"`
 	Limit     int         `json:"limit"`
 }

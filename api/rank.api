@@ -23,7 +23,7 @@ type InfoRes {
 type ListRes {
 	Data      []interface{} `json:"data"`
 	Total     int           `json:"total"`
-	Page      int           `json:"p"`
+	Page      int           `json:"page"`
 	TotalPage int           `json:"totalPage"`
 	Limit     int           `json:"limit"`
 }
